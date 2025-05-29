@@ -1,0 +1,31 @@
+export const initialProveedores = [
+  {
+    proveedor_id: 'PROV-001',
+    nombre_legal: 'Textiles del Valle S.A.S.',
+    nombre_comercial: 'TextiValle',
+    tipo_persona: 'juridica',
+    identificacion_fiscal: '900123456-1',
+    fecha_registro: '2022-01-15',
+    direccion: 'Carrera 45 #12-34',
+    ciudad: 'Cali',
+    pais: 'Colombia',
+    telefono: '6021234567',
+    email: 'contacto@textivalle.com',
+    pagina_web: 'www.textivalle.com',
+    contacto_nombre: 'Carlos Méndez',
+    contacto_cargo: 'Gerente Comercial',
+    contacto_telefono: '3101234567',
+    contacto_email: 'carlos.mendez@textivalle.com',
+    productos_servicios: 'Telas de algodón para pijamas y ropa interior',
+    categoria: 'materia_prima',
+    banco: 'Bancolombia',
+    tipo_cuenta: 'corriente',
+    numero_cuenta: '123456789',
+    titular_cuenta: 'Textiles del Valle S.A.S.',
+    codigo_swift_iban: 'COBCC0MXXXX',
+    condiciones_pago: '30_dias',
+    certificaciones: 'Certificación Oeko-Tex Standard 100',
+    documentacion_adjunta: true,
+    comentarios: 'Proveedor confiable con entregas puntuales'
+  }
+];
