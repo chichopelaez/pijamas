@@ -413,29 +413,29 @@ const PijamaInventoryApp = () => {
       case 'reportes':
         return (
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Reportes</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-100">Reportes</h3>
             <div className="flex space-x-4 mb-6">
               <button 
                 onClick={() => setActiveReport('ventas')}
-                className={`px-4 py-2 rounded-md ${activeReport === 'ventas' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                className={`px-4 py-2 rounded-md ${activeReport === 'ventas' ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
               >
                 Ventas
               </button>
               <button 
                 onClick={() => setActiveReport('inventario')}
-                className={`px-4 py-2 rounded-md ${activeReport === 'inventario' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                className={`px-4 py-2 rounded-md ${activeReport === 'inventario' ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
               >
                 Inventario
               </button>
               <button 
                 onClick={() => setActiveReport('proveedores')}
-                className={`px-4 py-2 rounded-md ${activeReport === 'proveedores' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                className={`px-4 py-2 rounded-md ${activeReport === 'proveedores' ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
               >
                 Proveedores
               </button>
               <button 
                 onClick={() => setActiveReport('clientes')}
-                className={`px-4 py-2 rounded-md ${activeReport === 'clientes' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                className={`px-4 py-2 rounded-md ${activeReport === 'clientes' ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
               >
                 Clientes
               </button>
@@ -449,7 +449,7 @@ const PijamaInventoryApp = () => {
       case 'estadisticas':
         return (
           <div className="p-6 space-y-8">
-            <h3 className="text-xl font-semibold mb-4">Estadísticas Clave</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-100">Estadísticas Clave</h3>
             <EstadisticasProductosVendidos productos={estadisticas.productos_mas_vendidos} />
             <EstadisticasClientesFrecuentes clientes={estadisticas.clientes_frecuentes} />
             <EstadisticasProveedoresFrecuentes proveedores={estadisticas.proveedores_frecuentes} />
@@ -463,7 +463,7 @@ const PijamaInventoryApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-900 text-gray-100 p-6">
       <PijamaHeader />
       
       <PijamaTabs>
@@ -493,7 +493,7 @@ const PijamaInventoryApp = () => {
         </PijamaTab>
       </PijamaTabs>
 
-      <div className="mt-4">
+      <div className="mt-8">
         <PijamaCard>
           {renderTabContent()}
         </PijamaCard>

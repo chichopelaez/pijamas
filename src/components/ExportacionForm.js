@@ -77,16 +77,20 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
     return formData.detalles.reduce((sum, detalle) => sum + detalle.subtotal_usd, 0);
   };
 
+  const inputClass = "w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all";
+  const labelClass = "block text-sm font-medium text-gray-300 mb-1";
+  const sectionTitleClass = "text-lg font-semibold border-b border-gray-600 pb-2 text-gray-100";
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-gray-200">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Cliente*</label>
+          <label className={labelClass}>Cliente*</label>
           <select
             name="cliente_id"
             value={formData.cliente_id}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           >
             <option value="">Seleccionar cliente</option>
@@ -99,12 +103,12 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">País Destino*</label>
+          <label className={labelClass}>País Destino*</label>
           <input
             name="pais_destino"
             value={formData.pais_destino}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           />
         </div>
@@ -112,23 +116,23 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Fecha Exportación</label>
+          <label className={labelClass}>Fecha Exportación</label>
           <input
             type="date"
             name="fecha_exportacion"
             value={formData.fecha_exportacion}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Incoterm*</label>
+          <label className={labelClass}>Incoterm*</label>
           <select
             name="incoterm"
             value={formData.incoterm}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           >
             <option value="EXW">EXW (Ex Works)</option>
@@ -141,12 +145,12 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Medio Transporte*</label>
+          <label className={labelClass}>Medio Transporte*</label>
           <select
             name="medio_transporte"
             value={formData.medio_transporte}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           >
             <option value="marítimo">Marítimo</option>
@@ -157,45 +161,45 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Dirección Destino*</label>
+        <label className={labelClass}>Dirección Destino*</label>
         <input
           name="direccion_destino"
           value={formData.direccion_destino}
           onChange={handleChange}
-          className="w-full p-2 border rounded-md"
+          className={inputClass}
           required
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Responsable*</label>
+          <label className={labelClass}>Responsable*</label>
           <input
             name="responsable_exportacion"
             value={formData.responsable_exportacion}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">N° Guía</label>
+          <label className={labelClass}>N° Guía</label>
           <input
             name="numero_guia"
             value={formData.numero_guia}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Estado*</label>
+          <label className={labelClass}>Estado*</label>
           <select
             name="estado_exportacion"
             value={formData.estado_exportacion}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           >
             <option value="pendiente">Pendiente</option>
@@ -212,33 +216,33 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
           name="documentacion_adjunta"
           checked={formData.documentacion_adjunta}
           onChange={handleChange}
-          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          className="h-4 w-4 text-purple-500 focus:ring-purple-500 border-gray-600 rounded bg-gray-700"
         />
-        <label className="ml-2 block text-sm text-gray-700">Documentación Adjunta</label>
+        <label className="ml-2 block text-sm text-gray-300">Documentación Adjunta</label>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Observaciones</label>
+        <label className={labelClass}>Observaciones</label>
         <textarea
           name="observaciones"
           value={formData.observaciones}
           onChange={handleChange}
           rows={3}
-          className="w-full p-2 border rounded-md"
+          className={inputClass}
         />
       </div>
 
-      <div className="border-t pt-4">
-        <h3 className="text-lg font-semibold mb-4">Productos a Exportar</h3>
+      <div className="border-t border-gray-700 pt-4">
+        <h3 className={sectionTitleClass}>Productos a Exportar</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Producto*</label>
+            <label className={labelClass}>Producto*</label>
             <select
               name="producto_id"
               value={detalleActual.producto_id}
               onChange={handleDetalleChange}
-              className="w-full p-2 border rounded-md"
+              className={inputClass}
             >
               <option value="">Seleccionar producto</option>
               {initialProductos.map(producto => (
@@ -250,19 +254,19 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Cantidad</label>
+            <label className={labelClass}>Cantidad</label>
             <input
               type="number"
               name="cantidad_exportada"
               value={detalleActual.cantidad_exportada}
               onChange={handleDetalleChange}
               min="1"
-              className="w-full p-2 border rounded-md"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Valor Unitario (USD)</label>
+            <label className={labelClass}>Valor Unitario (USD)</label>
             <input
               type="number"
               name="valor_unitario_usd"
@@ -270,24 +274,24 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
               onChange={handleDetalleChange}
               min="0"
               step="0.01"
-              className="w-full p-2 border rounded-md"
+              className={inputClass}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subtotal (USD)</label>
+            <label className={labelClass}>Subtotal (USD)</label>
             <input
               type="number"
               value={(detalleActual.cantidad_exportada * detalleActual.valor_unitario_usd).toFixed(2)}
               disabled
-              className="w-full p-2 border rounded-md bg-gray-100"
+              className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
             />
           </div>
 
           <div className="flex items-end">
             <button
               onClick={agregarDetalle}
-              className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
             >
               Agregar
             </button>
@@ -296,37 +300,37 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
 
         {formData.detalles.length > 0 && (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-700">
+              <thead className="bg-gray-700">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Producto</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Valor Unitario (USD)</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subtotal (USD)</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Producto</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Cantidad</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Valor Unitario (USD)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Subtotal (USD)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Acciones</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-gray-800 divide-y divide-gray-700">
                 {formData.detalles.map((detalle, index) => {
                   const producto = initialProductos.find(p => p.producto_id === detalle.producto_id);
                   return (
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                    <tr key={index} className="hover:bg-gray-700 transition-colors duration-200">
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-100">
                         {producto?.nombre_producto || 'Producto no encontrado'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-300">
                         {detalle.cantidad_exportada}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-300">
                         ${detalle.valor_unitario_usd?.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-300">
                         ${detalle.subtotal_usd?.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button 
                           onClick={() => eliminarDetalle(detalle.detalle_id)}
-                          className="text-red-600 hover:text-red-900"
+                          className="text-red-400 hover:text-red-300 transition-colors duration-200"
                         >
                           Eliminar
                         </button>
@@ -337,8 +341,8 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
               </tbody>
               <tfoot>
                 <tr>
-                  <td colSpan="3" className="px-6 py-4 text-right font-semibold">Total USD:</td>
-                  <td className="px-6 py-4 font-semibold">
+                  <td colSpan="3" className="px-6 py-4 text-right font-semibold text-gray-100">Total USD:</td>
+                  <td className="px-6 py-4 font-semibold text-gray-100">
                     ${calcularTotal().toLocaleString(undefined, { minimumFractionDigits: 2 })}
                   </td>
                   <td></td>
@@ -353,14 +357,14 @@ const ExportacionForm = ({ exportacion, onSave, onCancel }) => {
         <button 
           type="button"
           onClick={onCancel}
-          className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+          className="px-6 py-2 text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300"
         >
           Cancelar
         </button>
         <button 
           type="button"
           onClick={() => onSave(formData)}
-          className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 text-white bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 shadow-lg"
         >
           {exportacion ? 'Actualizar' : 'Guardar'} Exportación
         </button>

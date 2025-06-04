@@ -23,51 +23,54 @@ const ProductForm = ({ product, onSave, onCancel }) => {
     }));
   };
 
+  const inputClass = "w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all";
+  const labelClass = "block text-sm font-medium text-gray-300 mb-1";
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-gray-200">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Nombre Producto*</label>
+          <label className={labelClass}>Nombre Producto*</label>
           <input
             name="nombre_producto"
             value={formData.nombre_producto}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Categoría*</label>
+          <label className={labelClass}>Categoría*</label>
           <input
             name="categoria"
             value={formData.categoria}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+        <label className={labelClass}>Descripción</label>
         <textarea
           name="descripcion"
           value={formData.descripcion}
           onChange={handleChange}
           rows={3}
-          className="w-full p-2 border rounded-md"
+          className={inputClass}
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Unidad Medida*</label>
+          <label className={labelClass}>Unidad Medida*</label>
           <select
             name="unidad_medida"
             value={formData.unidad_medida}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
           >
             <option value="unidad">Unidad</option>
@@ -78,13 +81,13 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Precio Unitario*</label>
+          <label className={labelClass}>Precio Unitario*</label>
           <input
             type="number"
             name="precio_unitario"
             value={formData.precio_unitario}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
             min="0"
             step="0.01"
@@ -92,13 +95,13 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Costo Unitario*</label>
+          <label className={labelClass}>Costo Unitario*</label>
           <input
             type="number"
             name="costo_unitario"
             value={formData.costo_unitario}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             required
             min="0"
             step="0.01"
@@ -106,37 +109,37 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Proveedor Principal</label>
+          <label className={labelClass}>Proveedor Principal</label>
           <input
             name="proveedor_principal"
             value={formData.proveedor_principal}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Stock Mínimo</label>
+          <label className={labelClass}>Stock Mínimo</label>
           <input
             type="number"
             name="stock_minimo"
             value={formData.stock_minimo}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             min="0"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Stock Máximo</label>
+          <label className={labelClass}>Stock Máximo</label>
           <input
             type="number"
             name="stock_maximo"
             value={formData.stock_maximo}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className={inputClass}
             min="0"
           />
         </div>
@@ -147,9 +150,9 @@ const ProductForm = ({ product, onSave, onCancel }) => {
             name="activo"
             checked={formData.activo}
             onChange={handleChange}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-purple-500 focus:ring-purple-500 border-gray-600 rounded bg-gray-700"
           />
-          <label className="ml-2 block text-sm text-gray-700">Producto Activo</label>
+          <label className="ml-2 block text-sm text-gray-300">Producto Activo</label>
         </div>
       </div>
 
@@ -157,14 +160,14 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         <button 
           type="button"
           onClick={onCancel}
-          className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+          className="px-6 py-2 text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300"
         >
           Cancelar
         </button>
         <button 
           type="button"
           onClick={() => onSave(formData)}
-          className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 text-white bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 shadow-lg"
         >
           {product ? 'Actualizar' : 'Guardar'} Producto
         </button>

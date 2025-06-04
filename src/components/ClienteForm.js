@@ -16,80 +16,80 @@ const ClienteForm = ({ cliente, onSave, onCancel }) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6 text-gray-200">
       <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <label className="block text-sm font-medium text-gray-300 mb-1">
           Nombre
-          <span className="text-red-500">*</span>
+          <span className="text-red-400">*</span>
         </label>
         <input
           name="nombre"
           value={formData.nombre}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
           required
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Cédula
-            <span className="text-red-500">*</span>
+            <span className="text-red-400">*</span>
           </label>
           <input
             name="cedula"
             value={formData.cedula}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Correo
-            <span className="text-red-500">*</span>
+            <span className="text-red-400">*</span>
           </label>
           <input
             name="correo"
             type="email"
             value={formData.correo}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
             required
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Dirección</label>
+        <label className="block text-sm font-medium text-gray-300 mb-1">Dirección</label>
         <input
           name="direccion"
           value={formData.direccion}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ciudad</label>
+          <label className="block text-sm font-medium text-gray-300 mb-1">Ciudad</label>
           <input
             name="ciudad"
             value={formData.ciudad}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">País</label>
+          <label className="block text-sm font-medium text-gray-300 mb-1">País</label>
           <input
             name="pais"
             value={formData.pais}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
           />
         </div>
       </div>
@@ -98,14 +98,14 @@ const ClienteForm = ({ cliente, onSave, onCancel }) => {
         <button 
           type="button"
           onClick={onCancel}
-          className="px-6 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+          className="px-6 py-2 text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300"
         >
           Cancelar
         </button>
         <button 
           type="button"
           onClick={() => onSave(formData)}
-          className="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 text-white bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 shadow-lg"
         >
           Guardar Cliente
         </button>
@@ -115,5 +115,3 @@ const ClienteForm = ({ cliente, onSave, onCancel }) => {
 };
 
 export default ClienteForm;
-
-// DONE

@@ -2,11 +2,13 @@ const PijamaTab = ({ active, children, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-t-lg font-medium transition-colors ${
-        active
-          ? 'bg-blue-600 text-white'
-          : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-      }`}
+      className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ease-in-out 
+        ${active
+          ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg transform scale-105'
+          : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200'
+        }
+        focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75
+      `}
     >
       {children}
     </button>

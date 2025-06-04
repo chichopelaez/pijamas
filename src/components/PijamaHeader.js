@@ -1,8 +1,12 @@
 const PijamaHeader = () => {
   return (
-    <div className="mb-6">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Sistema de Gestión de Pijamas</h1>
-      <p className="text-gray-500 dark:text-gray-400">Control total sobre tu inventario de pijamas</p>
+    <div className="mb-8 text-center">
+      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 drop-shadow-lg">
+        PijamaFlow
+      </h1>
+      <p className="text-lg text-gray-300 mt-2 font-light tracking-wide">
+        Gestión de inventario de pijamas del futuro
+      </p>
     </div>
   );
 };
